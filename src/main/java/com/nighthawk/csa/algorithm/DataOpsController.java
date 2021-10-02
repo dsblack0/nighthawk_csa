@@ -1,12 +1,10 @@
 package com.nighthawk.csa.algorithm;
 
-import com.nighthawk.csa.consoleUI.ConsoleMethods;
 import com.nighthawk.csa.algorithm.genericDataModel.Alphabet;
 import com.nighthawk.csa.algorithm.genericDataModel.Animal;
 import com.nighthawk.csa.algorithm.genericDataModel.Cupcakes;
-
+import com.nighthawk.csa.consoleUI.ConsoleMethods;
 import com.nighthawk.csa.model.linkedlists.CircleQueue;
-import lombok.Getter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +19,6 @@ import java.util.List;
  * @author     John Mortensen
  *
  */
-@Getter
 @Controller  // HTTP requests are handled as a controller, using the @Controller annotation
 public class DataOpsController {
     private CircleQueue queue;	// circle queue object
@@ -222,4 +219,35 @@ public class DataOpsController {
         trial.deleteCQueue();
     }
 
+    public CircleQueue getQueue() {
+        return this.queue;
+    }
+
+    public int getCount() {
+        return this.count;
+    }
+
+    public boolean isAnimal() {
+        return this.animal;
+    }
+
+    public Animal.KeyType getAnimalKey() {
+        return this.animalKey;
+    }
+
+    public boolean isCake() {
+        return this.cake;
+    }
+
+    public Cupcakes.KeyType getCakeKey() {
+        return this.cakeKey;
+    }
+
+    public boolean isAlpha() {
+        return this.alpha;
+    }
+
+    public Alphabet.KeyType getAlphaKey() {
+        return this.alphaKey;
+    }
 }

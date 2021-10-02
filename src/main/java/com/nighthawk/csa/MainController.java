@@ -1,7 +1,7 @@
 package com.nighthawk.csa;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nighthawk.csa.model.starters.ImageInfo;
+// import com.nighthawk.csa.model.starters.ImageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +26,7 @@ public class MainController {
         return "starters/greet";                     // returns HTML VIEW (greeting)
     }
 
-    @GetMapping("/image")
+   /* @GetMapping("/image")
     public String image(Model model)  {
         //String web_server = "http://localhost:8080/";
         String web_server = "https://csa.nighthawkcodingsociety.com";
@@ -46,9 +46,9 @@ public class MainController {
 
         model.addAttribute("lii", lii);
         return "starters/image";
-    }
+    } */
 
-    @GetMapping("/image/grayscale")
+    /* @GetMapping("/image/grayscale")
     public String image_grayscale(Model model) {
         //String web_server = "http://localhost:8080/";
         String web_server = "https://csa.nighthawkcodingsociety.com";
@@ -60,7 +60,7 @@ public class MainController {
 //        String str = lii.get(0).grayscale();
         model.addAttribute("str", str);
         return "starters/image_grayscale";
-    }
+    } */
 
 
     @GetMapping("/binary")    // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings

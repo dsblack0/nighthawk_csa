@@ -1,4 +1,4 @@
-package com.nighthawk.csa.algorithm.fibonacciModel;
+package com.nighthawk.csa.algorithm.catalanModel;
 
 import com.nighthawk.csa.consoleUI.ConsoleMethods;
 
@@ -15,7 +15,7 @@ import lombok.Getter;
  The "_" in name is used to push this "Parent" Class to top of package file listing.
  */
 @Getter  // this will enable standard Getters on attributes in Class in form "getName" where "name" is attribute
-public abstract class _Fibonacci {
+public abstract class _Catalan {
     int size;
     String name;
     int hashID;
@@ -27,7 +27,7 @@ public abstract class _Fibonacci {
      Zero parameter constructor uses Telescoping technique to allow setting of the required value nth
      @param: none
      */
-    public _Fibonacci() {
+    public _Catalan() {
         this( 20);
     }
 
@@ -35,7 +35,7 @@ public abstract class _Fibonacci {
      Construct the nth fibonacci number
      @param: nth number, the value is constrained to 92 because of overflow in a long
      */
-    public _Fibonacci(int nth) {
+    public _Catalan(int nth) {
         this.size = nth;
         this.list = new ArrayList<>();
         this.hashID = 0;
@@ -100,9 +100,9 @@ public abstract class _Fibonacci {
     Tester class method.  This calls "main" class of each of the extended classes in the package
      */
     public static void main(String[] args) {
-        FibFor.main(null);
-        FibRecurse.main(null);
-        FibStream.main(null);
-        FibWhile.main(null);
+        CatFor.main(null);
+        CatRecurse.main(null);
+        CatStream.main(null);
+        CatWhile.main(null);
     }
 }

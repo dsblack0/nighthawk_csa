@@ -1,4 +1,4 @@
-package com.nighthawk.csa.model.starters;
+/* package com.nighthawk.csa.model.starters;
 
 import lombok.Getter;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -79,7 +79,7 @@ public class ImageInfo {
         Look through the byte values and take the average of the RGB values and set them all equal to that same average
         Ignore the alpha, it controls transparency
     */
-    public int[] grayscale(byte[] pixels){
+    /* public int[] grayscale(byte[] pixels){
         int[] pixels_int = new int[pixels.length];
         for(int i=0;i<pixels.length;i+=4) {
             float val = 0;
@@ -104,7 +104,7 @@ public class ImageInfo {
 
         We multiply the total number of pixels by 4 because of ARGB (alpga, red, green, blue)
      */
-    public byte[] image_to_pixels(BufferedImage img) throws IOException {
+   /* public byte[] image_to_pixels(BufferedImage img) throws IOException {
         return ((DataBufferByte) img.getRaster().getDataBuffer()).getData();
     }
 
@@ -113,7 +113,7 @@ public class ImageInfo {
         We will iterate through the 1D pixel array and set the rgb values to corresponding locations on image
         Then Base64 encode
      */
-    public String pixels_to_base64(int width, int height, int[] pixels) throws IOException {
+  /*  public String pixels_to_base64(int width, int height, int[] pixels) throws IOException {
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         for(int y=0;y<height;y++) {
             for(int x=0; x<width; x++) {
@@ -139,7 +139,7 @@ public class ImageInfo {
         An int is 4 bytes
         Alpha in byte 4, red in byte 3, green in byte 2, blue in byte 1
      */
-    public int argb(int a, int r, int g, int b) {
+  /*  public int argb(int a, int r, int g, int b) {
         return ((a&0x0ff)<<24)|((r&0x0ff)<<16)|((g&0x0ff)<<8)|(b&0x0ff);
     }
 
@@ -233,4 +233,4 @@ public class ImageInfo {
     }
 
 
-}
+} */

@@ -1,10 +1,10 @@
-package com.nighthawk.csa.algorithm.fibonacciModel;
+package com.nighthawk.csa.algorithm.catalanModel;
 
-public class FibWhile extends _Fibonacci {
-    public FibWhile() {
+public class CatWhile extends _Catalan {
+    public CatWhile() {
         super();
     }
-    public FibWhile(int nth) {
+    public CatWhile(int nth) {
         super(nth);
     }
 
@@ -14,12 +14,13 @@ public class FibWhile extends _Fibonacci {
     @Override
     protected void init() {
         super.name = "While";
+        int n = 1;
         // longer and more error prone "while" syntax is often best performer in this small scale test
         long limit = super.size;
-        long[] f = new long[]{0, 1};
-        while (limit-- > 0) {
+        long[] f = new long[]{1, 1};
+        while (limit-- > 0 && n++ > 0) {
             super.setData(f[0]);
-            f = new long[]{f[1], f[0] + f[1]};
+            f = new long[]{f[1], f[1] * 2 * n * (2 * n - 1) / (n * n + n)};
         }
     }
 
@@ -27,7 +28,7 @@ public class FibWhile extends _Fibonacci {
     Class method "main" with purpose of testing FibWhile
      */
     public static void main(String[] args) {
-        _Fibonacci fibonacci = new FibWhile();
-        fibonacci.print();
+        _Catalan catalan = new CatWhile();
+        catalan.print();
     }
 }

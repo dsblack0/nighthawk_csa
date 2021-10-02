@@ -1,12 +1,12 @@
-package com.nighthawk.csa.algorithm.fibonacciModel;
+package com.nighthawk.csa.algorithm.catalanModel;
 
 import java.util.stream.Stream;
 
-public class FibStream extends _Fibonacci {
-    public FibStream() {
+public class CatStream extends _Catalan {
+    public CatStream() {
         super();
     }
-    public FibStream(int nth) {
+    public CatStream(int nth) {
         super(nth);
     }
 
@@ -16,19 +16,20 @@ public class FibStream extends _Fibonacci {
     @Override
     protected void init() {
         super.name = "Stream";
+        int n = 1;
         // Stream iterates using lambda "->" syntax unil ".limit" is reached
         // Streams and Lambda have been added to more recent versions of Java, this will NOT be on AP Test
         // Streams are prevalent in Big Data, in this example it seems to perform the worst
-        Stream.iterate(new long[]{0, 1}, f -> new long[]{f[1], f[0] + f[1]})
+        Stream.iterate(new long[]{1, 1}, f -> new long[]{f[1], f[1] * 2 * n * (2 * n - 1) / (n * n + n)})
             .limit(super.size)
-            .forEach(f -> super.setData(f[0]) );
+            .forEach(f -> super.setData(f[0]));
     }
 
     /*
     Class method "main" with purpose of testing FibStream
      */
     public static void main(String[] args) {
-        _Fibonacci fibonacci = new FibStream();
-        fibonacci.print();
+        _Catalan catalan = new CatStream();
+        catalan.print();
     }
 }

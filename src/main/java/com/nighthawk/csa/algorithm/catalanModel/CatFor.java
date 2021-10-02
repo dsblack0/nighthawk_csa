@@ -1,9 +1,10 @@
-package com.nighthawk.csa.algorithm.fibonacciModel;
 
-public class FibFor extends _Fibonacci {
+package com.nighthawk.csa.algorithm.catalanModel;
+
+public class CatFor extends _Catalan {
     // zero and one argument constructors, both defer to super
-    public FibFor() { super(); }
-    public FibFor(int nth) {
+    public CatFor() { super(); }
+    public CatFor(int nth) {
         super(nth);
     }
 
@@ -13,9 +14,10 @@ public class FibFor extends _Fibonacci {
     @Override
     protected void init() {
         super.name = "For";
+        int n = 1;
         long limit = super.size;
         // for loops are likely the most common iteration structure, all the looping facts are in one line
-        for (long[] f = new long[]{0, 1}; limit-- > 0; f = new long[]{f[1], f[0] + f[1]})
+        for (long[] f = new long[]{1, 1}; limit-- > 0 && n++ > 0; f = new long[]{f[1], f[1] * 2 * n * (2 * n - 1) / (n * n + n)})
             super.setData(f[0]);
     }
 
@@ -23,7 +25,7 @@ public class FibFor extends _Fibonacci {
     Class method "main" with purpose of testing FibFor
      */
     public static void main(String[] args) {
-        _Fibonacci fibonacci = new FibFor(); // "FibFor" is used as initializer for the "_Fibonacci fibonacci"  object
-        fibonacci.print();
+        _Catalan catalan = new CatFor(); // "FibFor" is used as initializer for the "_Fibonacci fibonacci"  object
+        catalan.print();
     }
 }
